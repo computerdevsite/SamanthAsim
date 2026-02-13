@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sining ng mga Salita - Valentines Day</title>
+    <title> Happy Valentines Day</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap');
 
@@ -138,6 +138,11 @@
 </head>
 <body>
 
+    <audio id="valentinesMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div class="btn-wrapper" id="mainLanding">
         <button id="revealBtn">HAPPY VALENTINES DAY</button>
         <div class="click-note">Click here to reveal</div>
@@ -150,6 +155,7 @@
         const container = document.getElementById('textContainer');
         const landing = document.getElementById('mainLanding');
         const btn = document.getElementById('revealBtn');
+        const audio = document.getElementById('valentinesMusic');
         
         const words = [
             "MAHALKITA", "IKAWLANG", "SINTA", "TAHANAN", "LIYAG", "SINAG", "NGITI", "MUNDO", 
@@ -173,6 +179,9 @@
         }
 
         btn.addEventListener('click', () => {
+            // Dito mag-i-start ang tugtog pagka-click ng button
+            audio.play();
+
             landing.style.opacity = '0';
             setTimeout(() => {
                 landing.style.display = 'none';
